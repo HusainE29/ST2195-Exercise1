@@ -5,9 +5,9 @@ output:
     df_print: paged
 ---
 
-### Student Name:
+### Student Name: Husain Ebrahim
 
-### Student ID:
+### Student ID: 00104119
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook for practicing basic R data types, which is part of the ST2195 course at UOL and BIBF.
 Please answer the following questions by writing proper R code, and upload the completed file to a GitHub repository shared with your teacher (Github id heshaaam\@gmail.com).
@@ -39,11 +39,17 @@ Please place your answer in the available code chunks below the question.
 
 ```{r}
 
+var1 <- 22
+var2 <- 34
+
 ```
 
 2. Add the two variables and save them as a new variable named var3 and print the result.
 
 ```{r}
+
+var3 <- var1 + var2
+print(var3)
 
 ```
 
@@ -51,11 +57,34 @@ Please place your answer in the available code chunks below the question.
 
 ```{r}
 
+print(class(var1))
+print(class(var2))
+print(class(var3))
+
+print(mode(var1))
+print(mode(var2))
+print(mode(var3))
+
+print(typeof(var1))
+print(typeof(var2))
+print(typeof(var3))
+
+print(class(pi))
+print(mode(pi))
+print(typeof(pi))
+
 ```
 
 4. Create two character variables text1 and text2 containing any text of choice. Check mode, class, and type of the first one.
 
 ```{r}
+
+text1 <- "How old are you?"
+text2 <- "I am not telling you"
+
+print(class(text1))
+print(mode(text1))
+print(typeof(text1))
 
 ```
 
@@ -63,11 +92,24 @@ Add var1 from above to text1 and report the result.
 
 ```{r}
 
+result <- paste(text1, var1)
+print(result)
+
 ```
 
 5. Coerce or cast (force data type) var3 to integer, cast an integer variable to double, cast a string to a double.
 
 ```{r}
+
+var3_as_integer <- as.integer(var3)
+print(var3_as_integer)
+
+integer_to_double <- as.double(var1)
+print(integer_to_double)
+
+string_to_double <- as.double("3.14159")
+print(string_to_double)
+
 
 ```
 
@@ -76,11 +118,23 @@ Check whether the floor of $\pi$ is an integer?
 
 ```{r}
 
+floor_pi <- floor(pi)
+ceiling_pi <- ceiling(pi)
+
+print(floor_pi)
+print(ceiling_pi)
+
+is_integer_floor <- is.integer(floor_pi)
+print(is_integer_floor)
+
 ```
 
 7. Convert the ‘3.56437’ string as number.
 
 ```{r}
+
+string_number <- as.numeric("3.56437")
+print(string_number)
 
 ```
 
@@ -88,10 +142,16 @@ Check whether the floor of $\pi$ is an integer?
 
 ```{r}
 
+inf_division <- Inf / -Inf
+print(inf_division)
+
 ```
 
 9. Create two freely chosen complex numbers.
 ```{r}
+
+complex1 <- 4 + 3i
+complex2 <- 9 + 5i
 
 ```
 
@@ -99,17 +159,32 @@ Check whether the floor of $\pi$ is an integer?
 * Check that they are complex indeed.
 ```{r}
 
+print(is.complex(complex1))
+print(is.complex(complex2))
+
 ```
 
 
 * Add, multiply and divide one by another.
 ```{r}
 
+complex_sum <- complex1 + complex2
+complex_product <- complex1 * complex2
+complex_division <- complex1 / complex2
+
+print(complex_sum)
+print(complex_product)
+print(complex_division)
+
+
 ```
 
 
 * Add an integer to their sum.
 ```{r}
+
+sum_plus_integer <- complex_sum + 5
+print(sum_plus_integer)
 
 ```
 
@@ -118,6 +193,12 @@ Check whether the floor of $\pi$ is an integer?
 Raise the logical TRUE to the 7-th power.
 
 ```{r}
+
+logical_product <- TRUE * FALSE
+print(logical_product)
+
+logical_power <- TRUE ^ 7
+print(logical_power)
 
 ```
 
@@ -134,6 +215,29 @@ Raise the logical TRUE to the 7-th power.
 * extract substring starting at the 5th character and 5 characters long.
 
 ```{r}
+
+verse1 <- "I love Python more than R"
+verse2 <- "R please forgive me"
+
+# concatenate the two variables
+concatenated <- paste(verse1, verse2)
+print(concatenated)
+
+# paste the variables with '*' as a separator
+star_paste <- paste(verse1, verse2, sep = "*")
+print(star_paste)
+
+# find if 'and' occurs in the second line
+contains_and <- grepl("and", verse2)
+print(contains_and)
+
+# substitute a word for another
+substitute_word <- sub("forgive", "accept", verse2)
+print(substitute_word)
+
+# extract substring starting at the 5th character and 5 characters long
+substring_extracted <- substr(verse1, 5, 9)
+print(substring_extracted)
 
 ```
 
